@@ -23,7 +23,7 @@ int main() {
   v[0].push_back(0);
 
   rep(i, 10) {
-    rep(j, v[i].size()) {
+    rep(j, ll(v[i].size())) {
       ll tmp = v[i][j] * 10;
 
       if (tmp + 3 > n) break;
@@ -36,7 +36,7 @@ int main() {
   }
 
   rep(i, 10) {
-    rep(j, v[i].size()) {
+    rep(j, ll(v[i].size())) {
       string s = to_string(v[i][j]);
       if(s.find("3") == string::npos || s.find("5") == string::npos || s.find("7") == string::npos)
         continue;
