@@ -57,18 +57,12 @@ int main() {
   }
 
   ans = vector<ll>(n);
-
+  
   vector <ll> dist = dijikstra(0, G, n);
 
-
-  if (find(dist.begin(), dist.end(), INF) != dist.end())
-    cout << "No" << endl;
-
-  else {
-    cout << "Yes" << endl;
-    reps1(i, n) {
-      cout << ans[i] << endl;
-    }
+  cout << "Yes" << endl;
+  reps1(i, n) {
+    cout << ans[i] << endl;
   }
 
   return 0;
