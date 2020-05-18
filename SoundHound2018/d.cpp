@@ -9,7 +9,7 @@ using M = map<ll, ll>;
 ll INF = 100100100100100;
 ll MONEY = 1e15;
 
-vector<ll> dijkstra(ll start, vector<P> *G, ll n) {
+vector<ll> dijikstra(ll start, vector<P> *G, ll n) {
   priority_queue<P, vector<P>, greater<P>> pq;
   pq.push(P(0, start));
 
@@ -53,8 +53,8 @@ int main() {
     G_t[v].push_back(P(u, b));
   }
 
-  vector <ll> dist_s = dijkstra(s, G_s, n);
-  vector <ll> dist_t = dijkstra(t, G_t, n);
+  vector <ll> dist_s = dijikstra(s, G_s, n);
+  vector <ll> dist_t = dijikstra(t, G_t, n);
 
   vector<ll> dist(n);
   rep(i, n) {
