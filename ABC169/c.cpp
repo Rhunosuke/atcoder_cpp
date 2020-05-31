@@ -16,9 +16,9 @@ double pi = 3.141592653589793238;
 
 int main() {
   ll a;
-  string b;
+  double b;
   cin >> a >> b;
-  ll b100 = (b[0]-'0') * 100 + (b[2] - '0') * 10 + (b[3] - '0');
+  ll b100 = round(b*100);
   cout << a * b100 / 100 << endl;
 
   return 0;
