@@ -15,39 +15,25 @@ ll const INF = 1ll<<61;
 double pi = 3.141592653589793238;
 
 int main() {
-  ll n;
-  cin >> n;
-  vector<ll> a(n+1);
-  rep(i, n+1) cin >> a[i];
+  ll n, m;
+  cin >> n >> m;
 
-  vector<ll> node(n+1);
-
-  node[0] = 1 - a[0];
-  if (node[0] < 0) {
-    cout << -1 << endl;
-    return 0;
+  map<ll, vector<ll>> py;
+  vector<ll> p(m);
+  vector<ll> y(m);
+  rep(i, m) {
+    cin >> p[i] >> y[i];
+    py[p[i]].push_back(y[i]);
   }
 
-  reps1(i, n) {
-    node[i] = node[i-1] * 2 - a[i];
-    chmin(node[i], INF);
-    if (node[i] < 0) {
-      cout << -1 << endl;
-      return 0;
-    }
+  for( auto i = py.begin(); i != py.end() ; ++i ) {
+    sort(i->second.begin(), i->second.end());
   }
 
-  node[n] = 0;
-  if (a[n] > 2 * node[n-1]) {
-    cout << -1 << endl;
-    return 0;
+  rep(i, m) {
+    ll no = lower_bound(py[p[i]].begin(), py[p[i]].end(), y[i]) - py[p[i]].begin() + 1;
+    printf("%06lld%06lld\n", p[i], no);
   }
-
-  for(ll i = n-1; i >= 0; i--) {
-    chmin(node[i], node[i+1] + a[i+1]);
-  }
-
-  cout << accumulate(node.begin(), node.end(), 0ll) + accumulate(a.begin(), a.end(), 0ll) << endl;
 
   return 0;
 }
