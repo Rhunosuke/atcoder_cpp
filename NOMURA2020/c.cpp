@@ -44,7 +44,7 @@ int main() {
   }
 
   for(ll i = n-1; i >= 0; i--) {
-      chmin(node[i], node[i+1] + a[i+1]);
+    chmin(node[i], node[i+1] + a[i+1]);
   }
 
   cout << accumulate(node.begin(), node.end(), 0ll) + accumulate(a.begin(), a.end(), 0ll) << endl;
