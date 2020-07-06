@@ -49,13 +49,6 @@ ll calcPlus(vector<ll> plus, vector<ll> minus) {
       indexP++;
       continue;
     }
-/*
-    if (ll(plus.size()) - indexP == 2 && k % 2 == 1) {
-      ans = ans * plus[indexP] % MOD;
-      indexP++;
-      continue;
-    }
-    */
 
     if (ll(plus.size()) - indexP < 2) {
       ans = ans * minus[indexM] % MOD * minus[indexM + 1] % MOD;
