@@ -20,11 +20,7 @@ int main() {
   cin >> a >> b >> s;
 
   rep(i, a) {
-    ll isnumber = false;
-    rep(j, 10) {
-      if(s[i] == '0' + j) isnumber = true;
-    }
-    if (!isnumber) {
+    if(s[i] < '0' || s[i] > '9') {
       cout << "No" << endl;
       return 0;
     }
@@ -36,11 +32,7 @@ int main() {
   }
 
   repI(i, a+1, a+b+1) {
-    ll isnumber = false;
-    rep(j, 10) {
-      if(s[i] == '0' + j) isnumber = true;
-    }
-    if (!isnumber) {
+    if(s[i] < '0' || s[i] > '9') {
       cout << "No" << endl;
       return 0;
     }
