@@ -13,31 +13,14 @@ using M = map<int, int>;
 using Ml = map<ll, ll>;
 ll const INF = 1ll<<61;
 double pi = 3.141592653589793238;
-ll a, b;
-
-ll keta(ll n) {
-  return log10(n) + 1;
-}
-
-ll calc(ll n) {
-  return a * n + b * keta(n);
-}
 
 int main() {
-  ll x;
-  cin >> a >> b >> x;
+  ll n;
+  string s;
+  cin >> n >> s;
 
-  ll left = 0;
-  ll right = 1e9 + 1;
-
-  while (left + 1 < right) {
-    ll mid = (left + right) / 2;
-    if (calc(mid) <= x) left = mid;
-    else right = mid;
-
-  }
-
-  cout << left << endl;
+  for(char c: s) cout << char('A' + (c - 'A' + n) % 26);
+  cout << endl;
 
   return 0;
 }
