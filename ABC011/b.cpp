@@ -17,8 +17,10 @@ double pi = 3.141592653589793238;
 int main() {
   string s;
   cin >> s;
-  cout << transform(s.begin(), s.begin()+1, s.begin(), std::toupper);
 
+  s[0] = toupper(s[0]);
+  transform(s.begin()+1, s.end(), s.begin()+1, ::tolower);
+  cout << s << endl;
 
   return 0;
 }
