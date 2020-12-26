@@ -21,6 +21,5 @@ int main() {
   rep(i, n) cin >> t[i];
   cout << *min_element(t.begin(), t.end()) << endl;
 
-
   return 0;
 }
