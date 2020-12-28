@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+#define rep(i, n) for (int i = 0; i < (n); ++i)
+#define repI(i, d, n) for (int i = (d); i < (n); ++i)
+#define reps1(i, n) for (int i = 1; i < (n); ++i)
+using namespace std;
+template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return 1; } return 0; }
+template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return 1; } return 0; }
+
+using ll = long long;
+using P = pair<int, int>;
+using Pl = pair<ll, ll>;
+using M = map<int, int>;
+using Ml = map<ll, ll>;
+ll const INF = 1ll<<61;
+double pi = 3.141592653589793238;
+
+int main() {
+  string s, t;
+  cin >> s >> t;
+  string tmp = "atcoder";
+  bool ans = true;
+  rep(i, ll(s.size())) {
+    if (s[i] == t[i]) continue;
+    bool flag = false;
+    if (s[i] == '@') {
+      for(char c: tmp) {
+        if (t[i] == c) flag = true;
+      }
+    }
+    if (t[i] == '@') {
+      for(char c: tmp) {
+        if (s[i] == c) flag = true;
+      }
+    }
+    if (flag) continue;
+    ans = false;
+    break;
+  }
+
+  if(ans) cout << "You can win" << endl;
+  else cout << "You will lose" << endl;
+
+  return 0;
+}
