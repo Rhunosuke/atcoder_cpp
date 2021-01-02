@@ -18,17 +18,17 @@ int main() {
   ll m;
   cin >> m;
 
-  if (m < 1000) {
+  if (m < 100) {
     cout << "00" << endl;
   } else if (m <= 5000) {
-    printf("%2lld", m/100);
+    printf("%02lld\n", m/100);
   } else if (m <= 30000) {
-    printf("%2lld", m/1000 + 50);
+    printf("%lld\n", m/1000 + 50);
   } else if (m <= 70000) {
-    printf("%2lld", (m/1000 - 30) / 5 + 80);
+    printf("%lld\n", (m/1000 - 30) / 5 + 80);
   } else {
     cout << "89" << endl;
   }
-  
+
   return 0;
 }
