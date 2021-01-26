@@ -18,9 +18,12 @@ int main() {
   ll n, m;
   cin >> n >> m;
 
-  ll ans = 0;
-  if (n > 2) ans += m>2?2*(n-2):n-2;
-  if (m > 2) ans += n>2?2*(m-2):m-2;
+  if (n==1 && m==1) {
+    cout << 1 << endl;
+    return 0;
+  }
+
+  ll ans = n!=1&&m!=1?(n-2)*(m-2):n==1?m-2:n-2;
   cout << ans << endl;
 
   return 0;
