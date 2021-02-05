@@ -15,24 +15,9 @@ ll const INF = 1ll<<61;
 double pi = 3.141592653589793238;
 
 int main() {
-  ll n;
-  Ml a;
-  cin >> n;
-  rep(i, n) {
-    ll tmp;
-    cin >> tmp;
-    a[tmp]++;
-  }
-
-  ll ans = 0;
-
-  for(auto i = a.begin(); i != a.end(); i++) {
-    if (i->first == i->second) continue;
-    if (i->first > i->second) ans += i->second;
-    else ans += i->second - i->first;
-  }
-
-  cout << ans << endl;
+  ll n, m;
+  cin >> n >> m;
+  cout << (1900 * m + 100 * (n-m)) * pow(2, m) << endl;
 
   return 0;
 }
