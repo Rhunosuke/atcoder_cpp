@@ -18,12 +18,9 @@ int main() {
   ll n;
   cin >> n;
   ll ans = 1;
-  ll MOD = 1e13+1+n;
   repI(i, 2, n+1) {
-    ans *= i;
-    ans %= MOD;
+    ans = ans / __gcd(ans, ll(i)) * i;
   }
-  if (ans <= n) ans += 1e13+1;
 
   cout << ans+1 << endl;
 
