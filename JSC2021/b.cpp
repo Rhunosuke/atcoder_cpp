@@ -16,6 +16,8 @@ double pi = 3.141592653589793238;
 
 int main() {
   ll n, m;
+  cin >> n >> m;
+  
   set<ll> a, b;
   rep(i, n) {
     ll aa;
@@ -29,11 +31,9 @@ int main() {
     b.insert(bb);
   }
 
-  set<ll> u_ab, i_ab, ans;
-  set_union(a.begin(), a.end(), b.begin(), b.end(), u_ab);
-  set_intersection(a.begin(), a.end(), b.begin(), b.end(), i_ab);
+  vector<ll> ans;
 
-  set_difference(u_ab.begin(), u_ab.end(), i_ab.begin(), i_ab.end(), ans);
+  set_symmetric_difference(a.begin(), a.end(), b.begin(), b.end(), back_inserter(ans));
 
   for(auto i : ans) {
     cout << i << " ";
