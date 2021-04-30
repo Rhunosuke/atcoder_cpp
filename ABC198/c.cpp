@@ -19,8 +19,10 @@ int main() {
   cin >> r >> x >> y;
   double dist = sqrt(x*x+y*y);
 
-  if (floor(dist) == dist && r % ll(floor(dist)) == 0) cout << r/dist << endl;
-  else cout << r/ll(floor(dist)) + 1 << endl;
+  if (dist == r) cout << 1 << endl;
+  else if (dist <= 2*r) cout << 2 << endl;
+  else if (floor(dist) == dist && ll(floor(dist))%r == 0) cout << dist/r << endl;
+  else cout << ll(floor(dist))/r + 1 << endl;
 
   return 0;
 }
