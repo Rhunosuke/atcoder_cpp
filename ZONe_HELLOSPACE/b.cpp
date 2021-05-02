@@ -18,21 +18,15 @@ int main() {
   ll n;
   double D, H;
   cin >> n >> D >> H;
-  double d = 0, h = 0;
+  double ans = 0;
   rep(i, n) {
-    ll dtmp, htmp;
-    cin >> dtmp >> htmp;
-    if (htmp > h) {
-      h = htmp;
-      d = dtmp;
-    }
-    if (htmp == h && dtmp > d) {
-      d = dtmp;
-    }
+    double d, h;
+    cin >> d >> h;
+
+    chmax(ans, -(H-h)/(D-d)*D + H);
   }
 
-  if (h == H) cout << h << endl;
-  else cout << -(H-h)/(D-d)*D + H << endl;
+  cout << ans << endl;
 
   return 0;
 }
