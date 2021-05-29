@@ -15,16 +15,9 @@ ll const INF = 1ll<<61;
 double pi = 3.141592653589793238;
 
 int main() {
-  string s;
-  cin >> s;
-  rep(i, ll(s.size())) {
-    char tmp = s[ll(s.size())-1-i];
-    if (tmp == '6') cout << '9';
-    else if (tmp == '9') cout << '6';
-    else cout << tmp;
-  }
-
-  cout << endl;
+  ll a, b, c;
+  cin >> a >> b >> c;
+  cout << 21-a-b-c << endl;
 
   return 0;
 }
