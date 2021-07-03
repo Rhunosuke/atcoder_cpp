@@ -18,21 +18,12 @@ int main() {
   double a, b, c, d;
   cin >> a >> b >> c >> d;
 
-  if (b >= c) {
+  if (c*d <= b) {
     cout << -1 << endl;
     return 0;
   }
+
   cout << ceil(a/(c*d-b)) << endl;
-
-  /*
-  5/(3*2-2)
-
-  a + b*i <= c*i*d
-  a <= (c*d-b)*i
-  a/(c*d-b) <= i
-
-  */
-
 
   return 0;
 }
